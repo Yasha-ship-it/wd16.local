@@ -1,0 +1,19 @@
+{
+  "name": "vendor/wd16.local",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "yasha",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Yasha\\": "ORM/"
+    }
+  }
+}
