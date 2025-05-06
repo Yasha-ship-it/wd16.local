@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  nginx:
+    container_name: nginx
+    platform: linux/x86_64
+    image: nginx:alpine
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../php:/var/www/html
+      - ./nginx/:/etc/nginx/conf.d/
+    networks:
+      - php-network
+  php:
+    container_name: php
+    working_dir: /var/www/html
+    build:
+      args:
+        USER: www-data
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ../php:/var/www/html
+    networks:
+      - php-network
+  database:
+    container_name: database
+    image: mysql:latest
+    restart: unless-stopped
+    command: --init-file /init.sql
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: php
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123test321
+      MYSQL_ROOT_PASSWORD: 123test321
+    volumes:
+      - ./mysql/init_db.sql:/init.sql
+    networks:
+      - php-network
+networks:
+  php-network:
+    driver: bridge
