@@ -5,7 +5,7 @@ class ORM
     protected static ?PDO $db = null;
     protected string $table;
 
-    public function __construct()
+    protected function __construct()
     {
         if(is_null(self::$db)) {
             self::$db = require_once 'config.php';

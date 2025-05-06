@@ -10,7 +10,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ../php:/var/www/html
+      - ../:/var/www/html
       - ./nginx/:/etc/nginx/conf.d/
     networks:
       - php-network
@@ -23,7 +23,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - ../php:/var/www/html
+      - ../:/var/www/html
     networks:
       - php-network
   database:
