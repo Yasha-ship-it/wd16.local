@@ -174,4 +174,3 @@ interface LoggerInterface
 
 //PSR-12 - это расширение PSR-2
 
-
