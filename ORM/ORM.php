@@ -1,4 +1,8 @@
 <?php
+namespace App;
+
+use PDO;
+use PDOException;
 
 class ORM
 {
@@ -8,7 +12,16 @@ class ORM
     public function __construct()
     {
         if(is_null(self::$db)) {
-            self::$db = require_once 'config.php';
+            $connect = "mysql:host=database;dbname=php";
+            $user = "user";
+            $pass = "123test321";
+            try {
+                $pdo = new PDO($connect, $user, $pass);
+            } catch (PDOException $e) {
+                //sms - критичный случай нет подключения к БД
+                die('404');
+            }
+            self::$db = $pdo;
         }
     }
 

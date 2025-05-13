@@ -1,5 +1,5 @@
 <?php
-require_once 'ORM.php';
+namespace App;
 
 class User extends ORM
 {

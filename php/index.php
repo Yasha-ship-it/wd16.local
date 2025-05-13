@@ -1,6 +1,6 @@
 <?php
-require_once '../ORM/User.php';
-require_once '../ORM/Products.php';
+require_once '/ORM/User.php';
+require_once '/ORM/Products.php';
 
 $user = new User();
 $products = new Products();
