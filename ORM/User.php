@@ -1,5 +1,5 @@
 <?php
-namespace Yasha;
+namespace App;
 
 class User extends ORM
 {

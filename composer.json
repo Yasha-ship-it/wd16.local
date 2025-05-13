@@ -3,6 +3,7 @@
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "yasha",
@@ -10,10 +11,12 @@
     }
   ],
   "require": {
+    "ext-pdo": "*",
+    "guzzlehttp/guzzle": "7.9.0"
   },
   "autoload": {
     "psr-4": {
-      "Yasha\\": "ORM/"
+      "App\\": "ORM/"
     }
   }
 }

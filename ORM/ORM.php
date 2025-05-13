@@ -1,18 +1,22 @@
 <?php
-namespace Yasha;
+namespace App;
+
+use PDO;
+use PDOException;
+
 class ORM
 {
     protected static ?PDO $db = null;
     protected string $table;
 
-    protected function __construct()
+    public function __construct()
     {
         if(is_null(self::$db)) {
-            $connect = "mysql:host=MySQL-8.2;dbname=wd-16";
-            $user = "root";
-            $pass = "";
+            $connect = "mysql:host=database;dbname=php";
+            $user = "user";
+            $pass = "123test321";
             try {
-                $pdo = new \PDO($connect, $user, $pass);
+                $pdo = new PDO($connect, $user, $pass);
             } catch (PDOException $e) {
                 //sms - критичный случай нет подключения к БД
                 die('404');
