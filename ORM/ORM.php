@@ -12,6 +12,7 @@ class ORM
     public function __construct()
     {
         if(is_null(self::$db)) {
+
             $connect = "mysql:host=database;dbname=php";
             $user = "user";
             $pass = "123test321";
