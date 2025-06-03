@@ -1,7 +1,7 @@
 {
   "name": "wd16/wd16.local",
   "description": "description",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "proprietary",
   "version": "1.0.1",
   "authors": [
@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "ORM/"
+      "App\\": "app/"
     }
   }
 }
